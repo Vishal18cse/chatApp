@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:4000');
+const socket = io('https://chat-app-backend-seven-kappa.vercel.app');
 
 function Chat({ token, conversationId, currentUserId }) {
   const [messages, setMessages] = useState([]);
@@ -22,7 +22,7 @@ function Chat({ token, conversationId, currentUserId }) {
     const fetchMessages = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:4000/api/messages/${conversationId}`,{},
+          `http://chat-app-backend-seven-kappa.vercel.app/api/messages/${conversationId}`,{},
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setMessages(response.data);
@@ -53,7 +53,7 @@ function Chat({ token, conversationId, currentUserId }) {
     try {
       console.log(messages);
       const response = await axios.post(
-        `http://localhost:4000/api/messages`,
+        `http://chat-app-backend-seven-kappa.vercel.app/api/messages`,
         {
           conversation: conversationId,
           sender: currentUserId,

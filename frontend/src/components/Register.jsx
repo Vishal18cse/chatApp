@@ -10,7 +10,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/register', { username, password });
+      const response = await axios.post('http://chat-app-backend-seven-kappa.vercel.app/api/auth/register', { username, password });
       console.log(response);
       navigate('/login');
     } catch (err) {
