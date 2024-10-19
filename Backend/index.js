@@ -16,7 +16,7 @@ dotenv.config();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "*", // Allows all origins for Socket.io
+        origin: "https://chat-app-frontend-puce-mu.vercel.app", // Allows all origins for Socket.io
         methods: ["GET", "POST"],
     },
 });
@@ -37,7 +37,7 @@ io.on("connection", (socket) => {
 
 // CORS middleware - should be added **before routes**
 app.use(cors({
-    origin: true, // Specify frontend origin
+    origin:'https://chat-app-frontend-puce-mu.vercel.app', // Specify frontend origin
     credentials: true, // Allow cookies if needed
 }));
 
