@@ -8,7 +8,7 @@ function Conversation({token,setConversationId }) {
   useEffect(()=>{
     const fetchConversation = async ()=>{
       try{
-        const response = await axios.get('http://chat-app-backend-seven-kappa.vercel.app/api/conversations' , {
+        const response = await axios.get('https://chat-app-backend-seven-kappa.vercel.app/api/conversations' , {
           headers:{
             'Authorization': `Bearer ${token}`
           }

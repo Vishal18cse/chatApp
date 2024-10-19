@@ -9,7 +9,7 @@ const CreateConversation = ({ token, setConversationId , onConversationCreated  
 
     try {
       const response = await axios.post(
-        'http://chat-app-backend-seven-kappa.vercel.app/api/conversations', 
+        'https://chat-app-backend-seven-kappa.vercel.app/api/conversations', 
         { participants: [username] },
         {
           headers: {

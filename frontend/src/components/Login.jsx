@@ -9,7 +9,7 @@ const Login = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('chat-app-backend-seven-kappa.vercel.app/api/auth/login', { username, password });
+      const response = await axios.post('https://chat-app-backend-seven-kappa.vercel.app/api/auth/login', { username, password });
       setToken(response.data.token);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userId', response.data.userId);
