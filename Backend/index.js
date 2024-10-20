@@ -37,11 +37,13 @@ io.on("connection", (socket) => {
 app.options("" ,cors({
     origin:'https://chat-app-frontend-puce-mu.vercel.app', // Specify frontend origin
     credentials: true, // Allow cookies if needed
+    methods: ["GET", "POST"],
 }));
 // CORS middleware - should be added **before routes**
 app.use(cors({
     origin:'https://chat-app-frontend-puce-mu.vercel.app', // Specify frontend origin
     credentials: true, // Allow cookies if needed
+    methods: ["GET", "POST"],
 }));
 
 // Other middlewares
